@@ -1,0 +1,13 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  """this query say hellow wordl"""
+  hellow: String!
+  randomNumber: Float!
+  randomFromZero(
+    """should be a integer"""
+    to: Int = 10
+  ): Int!
+}
