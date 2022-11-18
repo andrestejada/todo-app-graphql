@@ -18,14 +18,22 @@ type Query {
   ): Int!
 
   """return a list of all todos"""
-  todos: [Todo!]!
+  todos(status: Boolean): [Todo!]!
   todo(id: Int!): Todo!
 }
 
 type Mutation {
   createTodo(createTodoInput: CreateTodo!): Todo!
+  updateTodo(updateTodoInput: updateTodo!): Todo!
+  removeTodo(id: Int!): Boolean!
 }
 
 input CreateTodo {
   description: String!
+}
+
+input updateTodo {
+  id: Int!
+  description: String
+  done: Boolean
 }
