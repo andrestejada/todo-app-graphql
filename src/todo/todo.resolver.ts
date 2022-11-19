@@ -38,4 +38,17 @@ export class TodoResolver {
   deleteTodo (@Args('id', { type: () => Int }) id: number) {
     return this.todoService.deleteTodo(id)
   }
+
+  @Query(()=>Int,{name:'totalTodos'})
+  totalTodos(){
+    return this.todoService.totalTodos
+  }
+  @Query(()=>Int,{name:'pendingTodos'})
+  pendingTodos(){
+    return this.todoService.pendingTodos
+  }
+  @Query(()=>Int,{name:'completedTodos'})
+  completedTodos(){
+    return this.todoService.completedTodos
+  }
 }

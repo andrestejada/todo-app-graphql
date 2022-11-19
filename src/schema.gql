@@ -20,6 +20,9 @@ type Query {
   """return a list of all todos"""
   todos(status: Boolean): [Todo!]!
   todo(id: Int!): Todo!
+  totalTodos: Int!
+  pendingTodos: Int!
+  completedTodos: Int!
 }
 
 type Mutation {

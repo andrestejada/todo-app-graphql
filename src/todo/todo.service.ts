@@ -10,7 +10,18 @@ export class TodoService {
     { id: 1, description: 'lavar', done: false },
     { id: 2, description: 'cocinar', done: false },
     { id: 3, description: 'comer', done: false },
+    { id: 4, description: 'Jugar', done: true },
   ]
+
+  get totalTodos(){
+    return this.todos.length
+  }
+  get pendingTodos(){
+    return this.todos.filter(todo=>todo.done===false).length
+  }
+  get completedTodos(){
+    return this.todos.filter(todo=>todo.done===true).length
+  }
 
   findAll (statusArgs:StatusArgs) {
     const {status} = statusArgs
